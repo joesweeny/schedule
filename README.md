@@ -76,7 +76,9 @@ $schedule = new Schedule;
 
 $application = new Application('CLI Application');
 
-$schedule->addTask((new Task('delete:files'))->sundays())->addTask(new Task('notify:users', ['--admin']));
+$schedule
+    ->addTask((new Task('delete:files'))->sundays())
+    ->addTask(new Task('notify:users', ['--admin']));
 
 $due = $schedule->getDueTasks();
 
