@@ -21,7 +21,7 @@ $task1 = new Task('delete:files');
 // Task will run every Monday at 00:00
 $task1->weekly();
 
-Additional frequency methods can be chained to the Task to be more specific
+// Additional frequency methods can be chained to the Task to be more specific
 
 $task2 = new Task('notify:users', ['--admin']);
 
