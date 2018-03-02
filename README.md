@@ -66,7 +66,7 @@ $schedule->getDueTasks();
 ```
 
 Once due Tasks are filtered they can be individually executed by the consuming application. The example uses
-Symfony Console as an example although other frameworks and libraries can be used
+Symfony Console as an example although other libraries can be used
 ```php
 use Symfony\Component\Console\Application;
 use JoeSweeny\Schedule\Task;
