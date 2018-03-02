@@ -47,6 +47,22 @@ class Task extends Cron
 
     public function execute(): string
     {
-        return trim($this->command . ' ' . implode(' ', $this->arguments));
+        return trim($this->command . ' ' . $this->formatArguments());
+    }
+
+    private function formatArguments(): string
+    {
+        $arguments = '';
+
+        foreach ($this->arguments as $key => $value) {
+            if (is_int($key)) {
+                $arguments .= "'{$value}' ";
+                continue;
+            }
+
+            $arguments .= "{$key}='{$value}' ";
+        }
+
+        return $arguments;
     }
 }
