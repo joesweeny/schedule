@@ -69,6 +69,8 @@ Once due Tasks are filtered they can be individually executed by the consuming a
 Symfony Console as an example although other libraries can be used
 ```php
 use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\StringInput;
+use Symfony\Component\Console\Output\BufferedOutput;
 use JoeSweeny\Schedule\Task;
 use JoeSweeny\Schedule\Schedule;
 
@@ -83,6 +85,6 @@ $schedule
 $due = $schedule->getDueTasks();
 
 foreach($due as $task) {
-    $application->run($task->execute(), $output);
+    $application->run(new StringInput($task->execute()), $output = new BufferedOutput);
 }
 ```
