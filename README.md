@@ -28,7 +28,7 @@ $task2 = new Task('notify:users', ['--admin']);
 // Task will run every Wednesday at 09:00AM
 $task2->wednesdays()->at('09:00');
 
-// Note any Task without a frequency specified added will automatically run every minute of every day
+// Note any Task without a frequency specified will automatically run every minute of every day
 ```
 
 Individual Tasks can be added to a Schedule
